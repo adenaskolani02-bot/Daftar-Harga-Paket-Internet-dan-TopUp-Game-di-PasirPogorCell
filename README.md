@@ -75,14 +75,8 @@
 </footer>
     <div class="container mx-auto p-4">
         <div class="header">
-<div class="bg-white shadow-md rounded-lg p-6 mt-4">
-    <h2 class="text-2xl font-semibold text-center mb-4">Info Toko PasirPogorCell</h2>
-    <div class="text-center">
-        <p class="text-gray-700 mb-2"><strong>Alamat:</strong> Pasir Pogor, RT.2/RW.1, Ciparasi, Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
-        <p class="text-gray-700 mb-2"><strong>Telepon:</strong> (+62) 838-4484-3020</p>
-        <p class="text-gray-700">Kunjungi kami untuk layanan terbaik!</p>
-    </div>
-</div>
+            <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
+        </div>
 
         <div class="flex mt-4 bg-gray-200 rounded-t-lg">
             <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
