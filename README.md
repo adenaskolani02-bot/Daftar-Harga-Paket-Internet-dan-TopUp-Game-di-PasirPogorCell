@@ -5,87 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Daftar Harga di PasirPogorCell</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f9fafb;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
         }
         .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 16px;
-            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
         }
         .header {
-            background-color: #4f46e5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            border-radius: 8px 8px 0 0;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .tab-button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             cursor: pointer;
-            border-radius: 5px 5px 0 0;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         .tab-button.active {
-            background-color: #4f46e5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        .operator-button {
-            padding: 8px 16px;
-            margin-right: 8px;
+        .tab-button:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        .operator-button, .game-button {
+            padding: 10px 18px;
+            margin-right: 10px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            background: #e2e8f0;
+            color: #374151;
         }
-        .operator-button.active {
-            background-color: #4f46e5;
+        .operator-button.active, .game-button.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        .game-button {
-            padding: 8px 16px;
-            margin-right: 8px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .game-button.active {
-            background-color: #4f46e5;
+        .operator-button:hover, .game-button:hover {
+            background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
             color: white;
         }
         .hidden {
             display: none;
         }
+        .info-toko {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+        }
+        .price-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .price-item li {
+            list-style: none;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
-<!-- Footer Alamat -->
-<footer class="bg-gray-800 text-white py-6 mt-12">
-    <div class="container mx-auto px-4">
-        <div class="text-center">
-            <h3 class="text-xl font-bold mb-2">PasirPogorCell</h3>
-            <p class="mb-1">Pasir pogor, RT.2/RW.1, Ciparasi</p>
-            <p class="mb-1">Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
-            <p class="mb-1">Telepon: (+62) 83844843020</p>
-            
-        </div>
-        <div class="text-center mt-4 pt-4 border-t border-gray-700">
-            <p>&copy; 2025 PasirPogorCell. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
     <div class="container mx-auto p-4">
         <div class="header">
-            <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
+            <h1 class="text-4xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
         </div>
 
-        <div class="flex mt-4 bg-gray-200 rounded-t-lg">
+        <!-- Bagian Info Toko dengan Alamat -->
+        <div class="info-toko">
+            <h2 class="text-2xl font-semibold text-center mb-4 text-gray-800">Info Toko PasirPogorCell</h2>
+            <div class="text-center">
+                <p class="text-gray-700 mb-2 font-medium"><strong>Alamat:</strong> Pasir Pogor, RT.2/RW.1, Ciparasi, Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
+                <p class="text-gray-700 mb-2 font-medium"><strong>Telepon:</strong> (+62) 838-4484-3020</p>
+                <p class="text-gray-700 font-medium">Kunjungi kami untuk layanan terbaik!</p>
+            </div>
+        </div>
+
+        <div class="flex mt-4 bg-gray-200 rounded-t-lg overflow-x-auto">
             <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
             <div class="tab-button" onclick="showTab('game')">Daftar Harga TopUp Game</div>
         </div>
 
         <!-- Paket Internet Section -->
         <div id="internet-tab">
-            <div class="flex mt-4 overflow-x-auto">
+            <div class="flex mt-4 overflow-x-auto bg-gray-100 p-2 rounded">
                 <div class="operator-button active" onclick="showOperator('indosat')">Indosat</div>
                 <div class="operator-button" onclick="showOperator('axis')">Axis</div>
                 <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
