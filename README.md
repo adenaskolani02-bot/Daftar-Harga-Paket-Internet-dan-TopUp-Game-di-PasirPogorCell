@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Daftar Harga di PasirPogorCell</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+    <style>
         body {
             background-color: #f9fafb;
         }
@@ -27,6 +27,7 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s;
         }
         .tab-button.active {
             background-color: #4f46e5;
@@ -37,6 +38,7 @@
             margin-right: 8px;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
         .operator-button.active {
             background-color: #4f46e5;
@@ -47,6 +49,7 @@
             margin-right: 8px;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
         .game-button.active {
             background-color: #4f46e5;
@@ -55,37 +58,31 @@
         .hidden {
             display: none;
         }
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .price-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
     </style>
 </head>
 <body>
-<!-- Footer Alamat -->
-<footer class="bg-gray-800 text-white py-6 mt-12">
-    <div class="container mx-auto px-4">
-        <div class="text-center">
-            <h3 class="text-xl font-bold mb-2">PasirPogorCell</h3>
-            <p class="mb-1">Pasir pogor, RT.2/RW.1, Ciparasi</p>
-            <p class="mb-1">Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
-            <p class="mb-1">Telepon: (+62) 83844843020</p>
-            
-        </div>
-        <div class="text-center mt-4 pt-4 border-t border-gray-700">
-            <p>&copy; 2025 PasirPogorCell. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
     <div class="container mx-auto p-4">
         <div class="header">
             <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
         </div>
 
-        <div class="flex mt-4 bg-gray-200 rounded-t-lg">
+        <div class="flex mt-4 bg-gray-200 rounded-t-lg overflow-x-auto">
             <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
             <div class="tab-button" onclick="showTab('game')">Daftar Harga TopUp Game</div>
         </div>
 
         <!-- Paket Internet Section -->
         <div id="internet-tab">
-            <div class="flex mt-4 overflow-x-auto">
+            <div class="flex mt-4 overflow-x-auto bg-gray-100 p-2 rounded">
                 <div class="operator-button active" onclick="showOperator('indosat')">Indosat</div>
                 <div class="operator-button" onclick="showOperator('axis')">Axis</div>
                 <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
@@ -98,25 +95,25 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Harian</h2>
                     <div class="card">
                         <h3 class="font-bold">Indosat Yellow:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Indosat Yellow 1GB 1 Hari - Rp 8.000</li>
-                            <li>Indosat Yellow 1GB 2 Hari - Rp 9.000</li>
-                            <li>Indosat Yellow 1GB 7 Hari - Rp 10.000</li>
-                            <li>Indosat Yellow 1GB 15 Hari - Rp 12.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Indosat Yellow 1GB 1 Hari - Rp 8.000</li></div>
+                            <div class="price-item"><li>Indosat Yellow 1GB 2 Hari - Rp 9.000</li></div>
+                            <div class="price-item"><li>Indosat Yellow 1GB 7 Hari - Rp 10.000</li></div>
+                            <div class="price-item"><li>Indosat Yellow 1GB 15 Hari - Rp 12.000</li></div>
+                        </div>
                     </div>
                     <div class="card">
                         <h3 class="font-bold">Freedom Mini Data:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Freedom Mini 3GB 1 Hari - Rp 10.000</li>
-                            <li>Freedom Mini 5GB 2 Hari - Rp 12.000</li>
-                            <li>Freedom Mini 3GB 3 Hari - Rp 15.000</li>
-                            <li>Freedom Mini 2,5GB 5 Hari (Unreg) - Rp 16.000</li>
-                            <li>Freedom Mini 3,5GB 5 Hari - Rp 17.000</li>
-                            <li>Freedom Mini 5GB 5 Hari (Unreg) - Rp 20.000</li>
-                            <li>Freedom Mini 7GB 7 Hari - Rp 26.000</li>
-                            <li>Freedom Mini 15GB 7 Hari - Rp 32.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Freedom Mini 3GB 1 Hari - Rp 10.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 5GB 2 Hari - Rp 12.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 3GB 3 Hari - Rp 15.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 2,5GB 5 Hari (Unreg) - Rp 16.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 3,5GB 5 Hari - Rp 17.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 5GB 5 Hari (Unreg) - Rp 20.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 7GB 7 Hari - Rp 26.000</li></div>
+                            <div class="price-item"><li>Freedom Mini 15GB 7 Hari - Rp 32.000</li></div>
+                        </div>
                     </div>
                 </div>
 
@@ -124,42 +121,42 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Bulanan</h2>
                     <div class="card">
                         <h3 class="font-bold">Pure Mini Data:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>100MB 24 Jam 30 Hari - Rp 2.000</li>
-                            <li>200MB 24 Jam 30 Hari - Rp 3.000</li>
-                            <li>250MB 24 Jam 30 Hari - Rp 3.500</li>
-                            <li>300MB 24 Jam 30 Hari - Rp 4.000</li>
-                            <li>400MB 24 Jam 30 Hari - Rp 5.000</li>
-                            <li>500MB 24 Jam 30 Hari - Rp 6.000</li>
-                            <li>600MB 24 Jam 30 Hari - Rp 7.000</li>
-                            <li>700MB 24 Jam 30 Hari - Rp 8.000</li>
-                            <li>800MB 24 Jam 30 Hari - Rp 8.500</li>
-                            <li>1GB All Jaringan 30 Hari - Rp 9.000</li>
-                            <li>1,5GB All Jaringan 30 Hari - Rp 13.000</li>
-                            <li>2GB All Jaringan 30 Hari - Rp 16.000</li>
-                            <li>2,5 GB All Jaringan 30 Hari - Rp 20.000</li>
-                            <li>3GB All Jaringan 30 Hari - Rp 22.000</li>
-                            <li>4GB All Jaringan 30 Hari - Rp 28.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>100MB 24 Jam 30 Hari - Rp 2.000</li></div>
+                            <div class="price-item"><li>200MB 24 Jam 30 Hari - Rp 3.000</li></div>
+                            <div class="price-item"><li>250MB 24 Jam 30 Hari - Rp 3.500</li></div>
+                            <div class="price-item"><li>300MB 24 Jam 30 Hari - Rp 4.000</li></div>
+                            <div class="price-item"><li>400MB 24 Jam 30 Hari - Rp 5.000</li></div>
+                            <div class="price-item"><li>500MB 24 Jam 30 Hari - Rp 6.000</li></div>
+                            <div class="price-item"><li>600MB 24 Jam 30 Hari - Rp 7.000</li></div>
+                            <div class="price-item"><li>700MB 24 Jam 30 Hari - Rp 8.000</li></div>
+                            <div class="price-item"><li>800MB 24 Jam 30 Hari - Rp 8.500</li></div>
+                            <div class="price-item"><li>1GB All Jaringan 30 Hari - Rp 9.000</li></div>
+                            <div class="price-item"><li>1,5GB All Jaringan 30 Hari - Rp 13.000</li></div>
+                            <div class="price-item"><li>2GB All Jaringan 30 Hari - Rp 16.000</li></div>
+                            <div class="price-item"><li>2,5 GB All Jaringan 30 Hari - Rp 20.000</li></div>
+                            <div class="price-item"><li>3GB All Jaringan 30 Hari - Rp 22.000</li></div>
+                            <div class="price-item"><li>4GB All Jaringan 30 Hari - Rp 28.000</li></div>
+                        </div>
                     </div>
                     <div class="card">
                         <h3 class="font-bold">Freedom Internet:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Freedom Internet 3GB 28 Hari - Rp 23.000</li>
-                            <li>Freedom Internet 4GB 28 Hari - Rp 29.000</li>
-                            <li>Freedom Internet 5.5GB 28 Hari - Rp 33.000</li>
-                            <li>Freedom Internet 9GB 28 Hari - Rp 44.000</li>
-                            <li>Freedom Internet 13GB 28 Hari - Rp 57.000</li>
-                            <li>Freedom Internet 16GB 28 Hari - Rp 69.000</li>
-                            <li>Freedom Internet 20GB 28 Hari - Rp 71.000</li>
-                            <li>Freedom Internet 25GB 28 Hari - Rp 83.000</li>
-                            <li>Freedom Internet 30GB 28 Hari - Rp 97.000</li>
-                            <li>Freedom Internet 42GB 28 Hari - Rp 105.000</li>
-                            <li>Freedom Internet Sensasi 50GB 28 Hari - Rp 106.000</li>
-                            <li>Freedom Internet Sensasi 70GB 28 Hari - Rp 127.000</li>
-                            <li>Freedom Internet Sensasi 150 GB 28 Hari - Rp 160.000</li>
-                            <li>Freedom Internet Sensasi 200GB 28 Hari - Rp 201.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Freedom Internet 3GB 28 Hari - Rp 23.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 4GB 28 Hari - Rp 29.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 5.5GB 28 Hari - Rp 33.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 9GB 28 Hari - Rp 44.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 13GB 28 Hari - Rp 57.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 16GB 28 Hari - Rp 69.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 20GB 28 Hari - Rp 71.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 25GB 28 Hari - Rp 83.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 30GB 28 Hari - Rp 97.000</li></div>
+                            <div class="price-item"><li>Freedom Internet 42GB 28 Hari - Rp 105.000</li></div>
+                            <div class="price-item"><li>Freedom Internet Sensasi 50GB 28 Hari - Rp 106.000</li></div>
+                            <div class="price-item"><li>Freedom Internet Sensasi 70GB 28 Hari - Rp 127.000</li></div>
+                            <div class="price-item"><li>Freedom Internet Sensasi 150 GB 28 Hari - Rp 160.000</li></div>
+                            <div class="price-item"><li>Freedom Internet Sensasi 200GB 28 Hari - Rp 201.000</li></div>
+                        </div>
                     </div>
                 </div>
 
@@ -167,16 +164,16 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Unlimited</h2>
                     <div class="card">
                         <h3 class="font-bold">Freedom Unlimited:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>1GB + 2GB + Unlimited App 6 Hari - Rp 20.000</li>
-                            <li>1GB All + 4,5GB + Unlimited App 28 Hari - Rp 36.000</li>
-                            <li>2GB All + 7,5 s/d 8GB + Unli App 28 Hari - Rp 59.000</li>
-                            <li>3GB All + 15 s/d 17GB + Unli App 28 Hari - Rp 83.000</li>
-                            <li>7GB All + 28GB + Unlimited App 28 Hari - Rp 108.000</li>
-                            <li>10GB All + 35GB + Unlimited App 28 Hari - Rp 120.000</li>
-                            <li>15GB All + 25GB + Unlimited App, Telp & SMS 28 Hari - Rp 131.000</li>
-                            <li>Unlimited (90GB All + Unl App + Telp + SMS) 24 jam 28 Hari - Rp 162.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>1GB + 2GB + Unlimited App 6 Hari - Rp 20.000</li></div>
+                            <div class="price-item"><li>1GB All + 4,5GB + Unlimited App 28 Hari - Rp 36.000</li></div>
+                            <div class="price-item"><li>2GB All + 7,5 s/d 8GB + Unli App 28 Hari - Rp 59.000</li></div>
+                            <div class="price-item"><li>3GB All + 15 s/d 17GB + Unli App 28 Hari - Rp 83.000</li></div>
+                            <div class="price-item"><li>7GB All + 28GB + Unlimited App 28 Hari - Rp 108.000</li></div>
+                            <div class="price-item"><li>10GB All + 35GB + Unlimited App 28 Hari - Rp 120.000</li></div>
+                            <div class="price-item"><li>15GB All + 25GB + Unlimited App, Telp & SMS 28 Hari - Rp 131.000</li></div>
+                            <div class="price-item"><li>Unlimited (90GB All + Unl App + Telp + SMS) 24 jam 28 Hari - Rp 162.000</li></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,15 +184,15 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Harian</h2>
                     <div class="card">
                         <h3 class="font-bold">Aigo Kuota Mini:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Mini 1,5GB + Bonus Aigo 1 Hari - Rp 8.000</li>
-                            <li>Mini Axis 2,5GB + Bonus Aigo 1 Hari - Rp 10.000</li>
-                            <li>Mini Axis 2GB + Bonus Aigo 3 Hari - Rp 12.000</li>
-                            <li>Mini Axis 2,5GB + Bonus Aigo 3 Hari - Rp 13.000</li>
-                            <li>Mini Axis 3GB + Bonus Aigo 3 Hari - Rp 13.000</li>
-                            <li>Mini Axis 4,5GB + Bonus Aigo 3 Hari - Rp 15.000</li>
-                            <li>Mini Axis 9GB + Bonus Aigo 3 Hari - Rp 17.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Mini 1,5GB + Bonus Aigo 1 Hari - Rp 8.000</li></div>
+                            <div class="price-item"><li>Mini Axis 2,5GB + Bonus Aigo 1 Hari - Rp 10.000</li></div>
+                            <div class="price-item"><li>Mini Axis 2GB + Bonus Aigo 3 Hari - Rp 12.000</li></div>
+                            <div class="price-item"><li>Mini Axis 2,5GB + Bonus Aigo 3 Hari - Rp 13.000</li></div>
+                            <div class="price-item"><li>Mini Axis 3GB + Bonus Aigo 3 Hari - Rp 13.000</li></div>
+                            <div class="price-item"><li>Mini Axis 4,5GB + Bonus Aigo 3 Hari - Rp 15.000</li></div>
+                            <div class="price-item"><li>Mini Axis 9GB + Bonus Aigo 3 Hari - Rp 17.000</li></div>
+                        </div>
                     </div>
                 </div>
 
@@ -203,15 +200,15 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Per Jam</h2>
                     <div class="card">
                         <h3 class="font-bold">Axis Paket Data Warnet:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Axis Data Paket Warnet 800 MB (1 Jam) - Rp 3.000</li>
-                            <li>Axis Data Paket Warnet Unlimited 1 Jam - Rp 4.000</li>
-                            <li>Axis Data Paket Warnet 1,5 GB (2 Jam) - Rp 4.000</li>
-                            <li>Axis Data Paket Warnet 3 GB (3 Jam) - Rp 5.000</li>
-                            <li>Axis Data Paket Warnet Unlimited 3 Jam - Rp 6.000</li>
-                            <li>Axis Data Paket Warnet 3 GB (6 Jam) - Rp 7.000</li>
-                            <li>Axis Data Paket Warnet Unlimited 24 Jam - Rp 10.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Axis Data Paket Warnet 800 MB (1 Jam) - Rp 3.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet Unlimited 1 Jam - Rp 4.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet 1,5 GB (2 Jam) - Rp 4.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet 3 GB (3 Jam) - Rp 5.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet Unlimited 3 Jam - Rp 6.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet 3 GB (6 Jam) - Rp 7.000</li></div>
+                            <div class="price-item"><li>Axis Data Paket Warnet Unlimited 24 Jam - Rp 10.000</li></div>
+                        </div>
                     </div>
                 </div>
 
@@ -219,17 +216,17 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Bulanan (30 Hari)</h2>
                     <div class="card">
                         <h3 class="font-bold">Bronet Bulanan:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Axis Data 1GB All 30 Hari - Rp 10.000</li>
-                            <li>Bronet 2GB + Bonus Aigo 30 Hari - Rp 18.000</li>
-                            <li>Bronet 3GB + Bonus Aigo 30 Hari - Rp 21.000</li>
-                            <li>Bronet 6GB + Bonus Aigo 30 Hari - Rp 32.000</li>
-                            <li>Bronet 8GB + Bonus Aigo 30 Hari - Rp 41.000</li>
-                            <li>Bronet 14GB + Bonus Aigo 30 Hari - Rp 62.000</li>
-                            <li>Axis Data Bronet 16GB All 30 Hari - Rp 74.000</li>
-                            <li>Bronet 20GB + Bonus Aigo 30 Hari - Rp 74.000</li>
-                            <li>Bronet 30GB + Bonus Aigo 30 Hari - Rp 91.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Axis Data 1GB All 30 Hari - Rp 10.000</li></div>
+                            <div class="price-item"><li>Bronet 2GB + Bonus Aigo 30 Hari - Rp 18.000</li></div>
+                            <div class="price-item"><li>Bronet 3GB + Bonus Aigo 30 Hari - Rp 21.000</li></div>
+                            <div class="price-item"><li>Bronet 6GB + Bonus Aigo 30 Hari - Rp 32.000</li></div>
+                            <div class="price-item"><li>Bronet 8GB + Bonus Aigo 30 Hari - Rp 41.000</li></div>
+                            <div class="price-item"><li>Bronet 14GB + Bonus Aigo 30 Hari - Rp 62.000</li></div>
+                            <div class="price-item"><li>Axis Data Bronet 16GB All 30 Hari - Rp 74.000</li></div>
+                            <div class="price-item"><li>Bronet 20GB + Bonus Aigo 30 Hari - Rp 74.000</li></div>
+                            <div class="price-item"><li>Bronet 30GB + Bonus Aigo 30 Hari - Rp 91.000</li></div>
+                        </div>
                     </div>
                 </div>
 
@@ -237,17 +234,17 @@
                     <h2 class="text-2xl font-semibold mb-4">Paket Internet Bulanan (60 Hari)</h2>
                     <div class="card">
                         <h3 class="font-bold">Bronet Bulanan:</h3>
-                        <ul class="list-disc pl-5">
-                            <li>Bronet 2GB All 24 Jam 60 Hari - Rp 32.000</li>
-                            <li>Bronet 3GB All 24 Jam 60 Hari - Rp 41.000</li>
-                            <li>Bronet 5GB All 24 Jam 60 Hari - Rp 58.000</li>
-                            <li>Bronet 8GB All 24 Jam 60 Hari - Rp 78.000</li>
-                            <li>Bronet 10GB All 24 Jam 60 Hari - Rp 89.000</li>
-                            <li>Bronet 12GB All 24 Jam 60 Hari - Rp 100.000</li>
-                            <li>Bronet 35GB + Bonus Aigo 60 Hari - Rp 110.000</li>
-                            <li>Bronet 16GB All 24 Jam 60 Hari - Rp 119.000</li>
-                            <li>Bronet 75GB + Bonus Aigo 60 Hari - Rp 171.000</li>
-                        </ul>
+                        <div class="price-list">
+                            <div class="price-item"><li>Bronet 2GB All 24 Jam 60 Hari - Rp 32.000</li></div>
+                            <div class="price-item"><li>Bronet 3GB All 24 Jam 60 Hari - Rp 41.000</li></div>
+                            <div class="price-item"><li>Bronet 5GB All 24 Jam 60 Hari - Rp 58.000</li></div>
+                            <div class="price-item"><li>Bronet 8GB All 24 Jam 60 Hari - Rp 78.000</li></div>
+                            <div class="price-item"><li>Bronet 10GB All 24 Jam 60 Hari - Rp 89.000</li></div>
+                            <div class="price-item"><li>Bronet 12GB All 24 Jam 60 Hari - Rp 100.000</li></div>
+                            <div class="price-item"><li>Bronet 35GB + Bonus Aigo 60 Hari - Rp 110.000</li></div>
+                            <div class="price-item"><li>Bronet 16GB All 24 Jam 60 Hari - Rp 119.000</li></div>
+                            <div class="price-item"><li>Bronet 75GB + Bonus Aigo 60 Hari - Rp 171.000</li></div>
+                        </div>
                     </div>
                 </div>
 
