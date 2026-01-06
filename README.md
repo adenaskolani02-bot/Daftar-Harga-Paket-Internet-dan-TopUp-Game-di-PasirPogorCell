@@ -1,79 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cek Daftar Harga di PasirPogorCell</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* CSS Anda tetap sama */
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Daftar Harga di PasirPogorCell</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9fafb;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .header {
+            background-color: #4f46e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-button.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .operator-button {
+            padding: 8px 16px;
+            margin-right: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .operator-button.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .game-button {
+            padding: 8px 16px;
+            margin-right: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .game-button.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Konten utama -->
-  <div class="container mx-auto p-4">
-    <div class="header">
-      <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
-    </div>
-
-    <div class="flex mt-4 bg-gray-200 rounded-t-lg">
-      <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
-      <div class="tab-button" onclick="showTab('game')">Daftar Harga TopUp Game</div>
-    </div>
-
-    <!-- Paket Internet Section -->
-    <div id="internet-tab">
-      <div class="flex mt-4 overflow-x-auto">
-        <div class="operator-button active" onclick="showOperator('indosat')">Indosat</div>
-        <div class="operator-button" onclick="showOperator('axis')">Axis</div>
-        <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
-        <div class="operator-button" onclick="showOperator('byu')">byU</div>
-      </div>
-      <!-- Tambahkan konten operator di sini -->
-    </div>
-
-    <!-- Game Section -->
-    <div id="game-tab" class="hidden">
-      <!-- Konten game di sini -->
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 mt-12">
+<!-- Footer Alamat -->
+<footer class="bg-gray-800 text-white py-6 mt-12">
     <div class="container mx-auto px-4">
-      <div class="text-center">
-        <h3 class="text-xl font-bold mb-2">PasirPogorCell</h3>
-        <p class="mb-1">Pasir pogor, RT.2/RW.1, Ciparasi</p>
-        <p class="mb-1">Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
-        <p class="mb-1">Telepon: (+62) 83844843020</p>
-      </div>
-      <div class="text-center mt-4 pt-4 border-t border-gray-700">
-        <p>&copy; 2025 PasirPogorCell. All Rights Reserved.</p>
-      </div>
+        <div class="text-center">
+            <h3 class="text-xl font-bold mb-2">PasirPogorCell</h3>
+            <p class="mb-1">Pasir pogor, RT.2/RW.1, Ciparasi</p>
+            <p class="mb-1">Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
+            <p class="mb-1">Telepon: (+62) 83844843020</p>
+            
+        </div>
+        <div class="text-center mt-4 pt-4 border-t border-gray-700">
+            <p>&copy; 2025 PasirPogorCell. All Rights Reserved.</p>
+        </div>
     </div>
-  </footer>
+</footer>
+    <div class="container mx-auto p-4">
+        <div class="header">
+            <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
+        </div>
 
-  <!-- Script untuk tab & operator -->
-  <script>
-    function showTab(tabName) {
-      document.getElementById("internet-tab").classList.add("hidden");
-      document.getElementById("game-tab").classList.add("hidden");
-      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById(tabName + "-tab").classList.remove("hidden");
-      event.target.classList.add("active");
-    }
+        <div class="flex mt-4 bg-gray-200 rounded-t-lg">
+            <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
+            <div class="tab-button" onclick="showTab('game')">Daftar Harga TopUp Game</div>
+        </div>
 
-    function showOperator(operatorName) {
-      document.querySelectorAll(".operator-content").forEach(content => content.classList.add("hidden"));
-      document.querySelectorAll(".operator-button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById(operatorName + "-content").classList.remove("hidden");
-      event.target.classList.add("active");
-    }
-  </script>
-
-</body>
-</html>
+        <!-- Paket Internet Section -->
+        <div id="internet-tab">
+            <div class="flex mt-4 overflow-x-auto">
+                <div class="operator-button active" onclick="showOperator('indosat')">Indosat</div>
+                <div class="operator-button" onclick="showOperator('axis')">Axis</div>
+                <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
+                <div class="operator-button" onclick="showOperator('byu')">byU</div>
+            </div>
+              </script>
+              </body>
+              </html>
             <!-- Indosat Content -->
             <div id="indosat-content" class="operator-content">
                 <div class="mt-8">
