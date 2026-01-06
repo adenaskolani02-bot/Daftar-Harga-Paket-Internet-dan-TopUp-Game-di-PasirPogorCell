@@ -27,7 +27,6 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px 5px 0 0;
-            transition: background-color 0.3s;
         }
         .tab-button.active {
             background-color: #4f46e5;
@@ -38,7 +37,6 @@
             margin-right: 8px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
         .operator-button.active {
             background-color: #4f46e5;
@@ -49,7 +47,6 @@
             margin-right: 8px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
         .game-button.active {
             background-color: #4f46e5;
@@ -58,31 +55,37 @@
         .hidden {
             display: none;
         }
-        .price-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 16px;
-        }
-        .price-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 8px;
-        }
     </style>
 </head>
 <body>
+<!-- Footer Alamat -->
+<footer class="bg-gray-800 text-white py-6 mt-12">
+    <div class="container mx-auto px-4">
+        <div class="text-center">
+            <h3 class="text-xl font-bold mb-2">PasirPogorCell</h3>
+            <p class="mb-1">Pasir pogor, RT.2/RW.1, Ciparasi</p>
+            <p class="mb-1">Kec. Sobang, Kabupaten Lebak, Banten 42280</p>
+            <p class="mb-1">Telepon: (+62) 83844843020</p>
+            
+        </div>
+        <div class="text-center mt-4 pt-4 border-t border-gray-700">
+            <p>&copy; 2025 PasirPogorCell. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
     <div class="container mx-auto p-4">
         <div class="header">
             <h1 class="text-3xl font-bold">Cek Daftar Harga di PasirPogorCell</h1>
         </div>
 
-        <div class="flex mt-4 bg-gray-200 rounded-t-lg overflow-x-auto">
+        <div class="flex mt-4 bg-gray-200 rounded-t-lg">
             <div class="tab-button active" onclick="showTab('internet')">Paket Internet</div>
             <div class="tab-button" onclick="showTab('game')">Daftar Harga TopUp Game</div>
         </div>
 
         <!-- Paket Internet Section -->
         <div id="internet-tab">
-            <div class="flex mt-4 overflow-x-auto bg-gray-100 p-2 rounded">
+            <div class="flex mt-4 overflow-x-auto">
                 <div class="operator-button active" onclick="showOperator('indosat')">Indosat</div>
                 <div class="operator-button" onclick="showOperator('axis')">Axis</div>
                 <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
