@@ -74,7 +74,6 @@
 
 </body>
 </html>
-
             <!-- Indosat Content -->
             <div id="indosat-content" class="operator-content">
                 <div class="mt-8">
