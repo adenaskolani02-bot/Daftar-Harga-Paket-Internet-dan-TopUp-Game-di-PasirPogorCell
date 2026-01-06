@@ -91,9 +91,7 @@
                 <div class="operator-button" onclick="showOperator('telkomsel')">Telkomsel</div>
                 <div class="operator-button" onclick="showOperator('byu')">byU</div>
             </div>
-              </script>
-              </body>
-              </html>
+            
             <!-- Indosat Content -->
             <div id="indosat-content" class="operator-content">
                 <div class="mt-8">
